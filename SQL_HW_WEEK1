@@ -212,7 +212,7 @@ LIMIT 5;
 
 
 # 8. Create a question that (a) uses data from the flights database, and (b) requires aggregation to answer it, and
-write down both the question, and the query that answers the question.
+# write down both the question, and the query that answers the question.
 # What is average flight duration of flights that departed from JFK in Year 2013?
 
 SELECT origin, AVG(dep_time) FROM flights 
