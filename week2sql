@@ -1,0 +1,39 @@
+# Q1.
+
+CREATE TABLE info_video(
+	id_video int(11),
+	title_video text,
+	length_video time,
+	url_video text);
+
+INSERT INTO info_video(id_video, title_video, length_video, url_video)
+VALUES (1, “NBA”, 343, “https://youtu.be/7xtB9hcl1R4”), 
+	    (2, “NFL”, 103, “https://youtu.be/rD8XRjYBwrA”),
+		  (3, “MLB”, 119, “https://youtu.be/QxZqTWBWXI4”);
+
+#check to see if the above query worked.
+SELECT * FROM info_video
+
+# Q2.
+
+CREATE TABLE rating_video(
+	id_user int(11) NOT NULL,
+	name_user text NOT NULL,
+	int_rating int(11),
+	text_rating text, NOT NULL
+	id_video int(11)); NOT NULL
+
+INSERT INTO rating_video(id_user, name_user, int_rating, text_rating, id_video)
+VALUES	(1, “sam”, 3, “It was okay”, 1),
+		(2, “adam”, 4, “very good”, 1),
+		(1, “sam”, 4, “interesting”, 2),
+		(3, “james” 5, “excellent”, 5);
+
+
+# Q3. 
+SELECT * FROM info_video
+LEFT JOIN rating_video
+ON info_video.id_video = rating_video.id_video
+ORDER BY info_video.id_video;
+
+
